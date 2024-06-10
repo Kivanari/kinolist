@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/',)
-router.get('/',)
-router.get('/:id',)
+router.post('/', (req, res) => {
+    res.json({ message: 'Movie created' });
+});
 
-module.exports = router
+router.get('/', (req, res) => {
+    res.json({ message: 'List of movies' });
+});
 
+router.get('/:id', (req, res) => {
+    res.json({ message: `Movie with id ${req.params.id}` });
+});
+
+module.exports = router;
